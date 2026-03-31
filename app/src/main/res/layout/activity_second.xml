@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+A
+        <!-- ===== JUDUL ===== -->
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Kalkulator Bangun"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- ===== CARD: BANGUN DATAR ===== -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDatar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvJudul"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🔺 Bangun Datar — Luas Segitiga"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#283593"
+                    android:paddingBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rumus: L = ½ × alas × tinggi"
+                    android:textSize="13sp"
+                    android:textColor="#5C6BC0"
+                    android:paddingBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etAlas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan alas (cm)"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="12dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:id="@+id/etTinggiSegitiga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan tinggi (cm)"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="12dp"
+                    android:layout_marginBottom="14dp"/>
+
+                <Button
+                    android:id="@+id/btnHitungSegitiga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hitung Luas Segitiga"
+                    android:backgroundTint="#3949AB"
+                    android:textColor="#FFFFFF"
+                    android:padding="12dp"/>
+
+                <TextView
+                    android:id="@+id/tvHasilSegitiga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hasil: -"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A237E"
+                    android:paddingTop="12dp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ===== CARD: BANGUN RUANG ===== -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardRuang"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/cardDatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📦 Bangun Ruang — Volume Balok"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1B5E20"
+                    android:paddingBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rumus: V = panjang × lebar × tinggi"
+                    android:textSize="13sp"
+                    android:textColor="#388E3C"
+                    android:paddingBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etPanjang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan panjang (cm)"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="12dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:id="@+id/etLebar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan lebar (cm)"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="12dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:id="@+id/etTinggiBalok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan tinggi (cm)"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="12dp"
+                    android:layout_marginBottom="14dp"/>
+
+                <Button
+                    android:id="@+id/btnHitungBalok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hitung Volume Balok"
+                    android:backgroundTint="#2E7D32"
+                    android:textColor="#FFFFFF"
+                    android:padding="12dp"/>
+
+                <TextView
+                    android:id="@+id/tvHasilBalok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hasil: -"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1B5E20"
+                    android:paddingTop="12dp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
