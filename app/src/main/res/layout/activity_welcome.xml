@@ -29,7 +29,7 @@
                 android:id="@+id/tvGreeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hello,"
+                android:text="Selamat Datang,"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="14sp"
                 android:textColor="@color/white_70"/>
@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jakarta, Indonesia"
+                android:text="Pekanbaru, Indonesia"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="12sp"
                 android:textColor="@color/white_70"/>
