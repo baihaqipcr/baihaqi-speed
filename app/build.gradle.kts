@@ -4,11 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.baihaqi_speed"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.baihaqi_speed"
@@ -33,7 +29,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
+
 
 dependencies {
     implementation(libs.androidx.core.ktx)

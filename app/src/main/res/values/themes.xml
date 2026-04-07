@@ -1,9 +1,32 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.BaihaqiSpeed" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<resources>
+    <style name="Theme.AquaFlow" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/gradientStart</item>
     </style>
 
-    <style name="Theme.BaihaqiSpeed" parent="Base.Theme.BaihaqiSpeed" />
+    <!-- Base style for AquaFlow text appearances to avoid AAPT linking errors -->
+    <style name="TextAppearance.AquaFlow" parent="android:TextAppearance" />
+
+    <!-- Custom font styles -->
+    <style name="TextAppearance.AquaFlow.Title">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="TextAppearance.AquaFlow.Tagline">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white_70</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="TextAppearance.AquaFlow.Body">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_dark</item>
+    </style>
 </resources>

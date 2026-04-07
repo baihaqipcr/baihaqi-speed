@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+
+    <!-- Lingkaran background -->
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M40,40m-38,0a38,38 0,1 1,76 0a38,38 0,1 1,-76 0"/>
+
+    <!-- Drop air -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,15 C40,15 24,34 24,44 C24,52.8 31.2,60 40,60 C48.8,60 56,52.8 56,44 C56,34 40,15 40,15Z"/>
+
+    <!-- Highlight di dalam tetes -->
+    <path
+        android:fillColor="#80E1F5"
+        android:pathData="M35,38 C33,42 33,47 36,50 C34,47 34,42 36,38Z"/>
+</vector>

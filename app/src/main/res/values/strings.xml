@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Baihaqi-Speed</string>
+    <string name="app_name">AquaFlow</string>
+    <string name="app_tagline">Your smart companion\nfor daily life</string>
+    <string name="welcome_title">Welcome Back!</string>
+    <string name="sign_in">Sign In</string>
+    <string name="new_user">New user? Create an account</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Continue</string>
+    <string name="or">— OR —</string>
+    <string name="login_google">Continue with Google</string>
 </resources>
