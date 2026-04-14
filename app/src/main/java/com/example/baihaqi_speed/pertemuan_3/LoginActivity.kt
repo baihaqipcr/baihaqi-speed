@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.baihaqi_speed.HomeActivity
 import com.example.baihaqi_speed.WelcomeActivity
 import com.example.baihaqi_speed.databinding.ActivityLoginBinding
 
@@ -86,7 +87,7 @@ class LoginActivity : AppCompatActivity() {
         Toast.makeText(this, "Login berhasil! Selamat datang, $username", Toast.LENGTH_SHORT).show()
 
         // Buat Intent untuk berpindah Activity
-        val intent = Intent(this, WelcomeActivity::class.java).apply {
+        val intent = Intent(this, HomeActivity::class.java).apply {
             // Kirim data username ke halaman berikutnya
             putExtra(EXTRA_USERNAME, username)
         }

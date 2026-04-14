@@ -32,7 +32,7 @@
             android:id="@+id/tvAppName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BERESiN"
+            android:text="HQSpaces"
             android:textAppearance="@style/TextAppearance.AquaFlow.Title"
             android:textSize="32sp"/>
 
@@ -41,7 +41,7 @@
             android:id="@+id/tvTagline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your smart companion for daily life"
+            android:text="Your smart spaces calculator"
             android:textAppearance="@style/TextAppearance.AquaFlow.Tagline"
             android:gravity="center"
             android:paddingTop="6dp"/>

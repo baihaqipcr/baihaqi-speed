@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_page">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cyan_800"
+        android:orientation="vertical"
+        android:paddingTop="44dp"
+        android:paddingBottom="16dp"
+        android:paddingHorizontal="20dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="@drawable/bg_edittext_glass"
+            android:backgroundTint="@color/white"
+            android:contentDescription="Kembali"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tvFromHomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HQSpaces"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="11sp"
+            android:textColor="@color/text_white_70"
+            android:letterSpacing="0.1"/>
+
+        <TextView
+            android:id="@+id/tvPageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Galeri Bentuk"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="22sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tvFromHomeDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="11sp"
+            android:textColor="@color/text_white_70"
+            android:paddingTop="4dp"/>
+    </LinearLayout>
+
+    <!-- KONTEN -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Hero Image -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:src="@drawable/img_hero_custom1"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Galeri Bangun Geometri"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bangun geometri adalah bentuk-bentuk matematis yang memiliki sifat dan rumus unik. Berikut adalah beberapa bangun datar yang umum dipelajari."
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="18dp"/>
+
+            <!-- Card Lingkaran -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/primary_50">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lingkaran"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Luas: π × r²  |  Keliling: 2 × π × r"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Persegi Panjang -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/cyan_100">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Persegi Panjang"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/cyan_800"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Luas: p × l  |  Keliling: 2 × (p + l)"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Segitiga -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/green_100">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Segitiga"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/green_800"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Luas: ½ × a × t  |  Keliling: s1 + s2 + s3"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Trapesium -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/red_100">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trapesium"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/red_800"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Luas: ½ × (a + b) × t"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

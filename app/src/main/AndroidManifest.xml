@@ -11,26 +11,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AquaFlow">
-
         <activity
             android:name=".pertemuan_3.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- WelcomeActivity -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".BangunRuangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CustomOneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CustomTwoActivity"
+            android:exported="false" /> <!-- WelcomeActivity -->
         <activity
             android:name=".WelcomeActivity"
-            android:exported="false" />
-
-        <!-- MainActivity tetap ada, tidak dihapus -->
+            android:exported="false" /> <!-- MainActivity tetap ada, tidak dihapus -->
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>

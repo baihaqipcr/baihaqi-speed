@@ -1,17 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#29B6F6</color>
-    <color name="colorPrimaryDark">#0288D1</color>
-    <color name="colorAccent">#4DD0E1</color>
-    <color name="gradientStart">#1E88E5</color>
-    <color name="gradientMid">#26C6DA</color>
-    <color name="gradientEnd">#66BB6A</color>
-    <color name="white">#FFFFFF</color>
+
+    <!-- ===== PRIMARY BLUE ===== -->
+    <color name="primary_50">#E3F2FD</color>
+    <color name="primary_100">#BBDEFB</color>
+    <color name="primary_200">#90CAF9</color>
+    <color name="primary_300">#64B5F6</color>
+    <color name="primary_400">#42A5F5</color>
+    <color name="primary_500">#2196F3</color>
+    <color name="primary_600">#1E88E5</color>
+    <color name="primary_700">#1976D2</color>
+    <color name="primary_800">#1565C0</color>
+    <color name="primary_900">#0D47A1</color>
+    <color name="text_dark">#212121</color>
     <color name="white_70">#B3FFFFFF</color>
-    <color name="white_40">#66FFFFFF</color>
-    <color name="white_20">#33FFFFFF</color>
-    <color name="text_dark">#0D47A1</color>
+    <color name="gradientStart">#2196F3</color>
+
+
+    <!-- ===== CYAN / TEAL ===== -->
+    <color name="cyan_100">#B2EBF2</color>
+    <color name="cyan_200">#80DEEA</color>
+    <color name="cyan_400">#26C6DA</color>
+    <color name="cyan_600">#00ACC1</color>
+    <color name="cyan_800">#00838F</color>
+
+    <!-- ===== GREEN ===== -->
+    <color name="green_100">#C8E6C9</color>
+    <color name="green_200">#A5D6A7</color>
+    <color name="green_400">#66BB6A</color>
+    <color name="green_600">#43A047</color>
+    <color name="green_800">#2E7D32</color>
+
+    <!-- ===== RED (Logout) ===== -->
+    <color name="red_100">#FFCDD2</color>
+    <color name="red_400">#EF5350</color>
+    <color name="red_600">#E53935</color>
+    <color name="red_800">#C62828</color>
+
+    <!-- ===== BACKGROUND & SURFACE ===== -->
+    <color name="bg_page">#EFF8FF</color>
+    <color name="bg_card">#F0FAFF</color>
+    <color name="bg_surface">#FFFFFF</color>
+
+    <!-- ===== TEXT ===== -->
+    <color name="text_primary">#0D47A1</color>
+    <color name="text_secondary">#1976D2</color>
     <color name="text_hint">#90CAF9</color>
-    <color name="card_bg">#E8F4FD</color>
-    <color name="btn_google_bg">#FFFFFF</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_white_70">#B3FFFFFF</color>
+
+
+    <!-- ===== BORDER ===== -->
+    <color name="border_light">#B3E5FC</color>
+    <color name="border_medium">#90CAF9</color>
+
+    <!-- ===== SEMANTIC ===== -->
+    <color name="color_error">#E53935</color>
+    <color name="color_success">#43A047</color>
+    <color name="color_warning">#FB8C00</color>
+    <color name="color_info">#0288D1</color>
+
+    <!-- ===== MISC ===== -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#212121</color>
+    <color name="colorPrimary">@color/primary_800</color>
+    <color name="colorPrimaryDark">@color/primary_900</color>
+    <color name="colorAccent">@color/cyan_400</color>
+
 </resources>

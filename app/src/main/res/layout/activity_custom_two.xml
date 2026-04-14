@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_page">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_800"
+        android:orientation="vertical"
+        android:paddingTop="44dp"
+        android:paddingBottom="16dp"
+        android:paddingHorizontal="20dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="@drawable/bg_edittext_glass"
+            android:backgroundTint="@color/white"
+            android:contentDescription="Kembali"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tvFromHomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HQSpaces"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="11sp"
+            android:textColor="@color/text_white_70"
+            android:letterSpacing="0.1"/>
+
+        <TextView
+            android:id="@+id/tvPageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tips Penggunaan"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="22sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tvFromHomeDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="11sp"
+            android:textColor="@color/text_white_70"
+            android:paddingTop="4dp"/>
+    </LinearLayout>
+
+    <!-- KONTEN -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Hero Image -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:src="@drawable/img_hero_custom2"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tips Penggunaan AquaFlow"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Tips 1 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/bg_card">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="1"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_btn_blue"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Masukkan nilai dengan benar"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_primary"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pastikan satuan konsisten (cm atau m)"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tips 2 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/bg_card">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="2"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_btn_teal"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cek Logcat saat debugging"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_primary"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Filter TAG untuk melihat log spesifik"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tips 3 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/bg_card">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="3"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_btn_green"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gunakan ViewBinding"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_primary"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lebih aman dari NullPointerException"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tips 4 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/bg_card">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="4"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_btn_red"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kirim data dengan Intent"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_primary"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="putExtra untuk passing data antar Activity"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
