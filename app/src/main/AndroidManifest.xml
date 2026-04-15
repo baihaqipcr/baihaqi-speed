@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AquaFlow">
         <activity
+            android:name=".pertemuan_5.FifthActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan_3.LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -22,7 +25,7 @@
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".BangunRuangActivity"
             android:exported="false" />
