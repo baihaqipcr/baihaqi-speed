@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AquaFlow">
         <activity
-            android:name=".pertemuan_5.FifthActivity"
+            android:name=".pertemuan_5.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_3.LoginActivity"
+            android:name=".pertemuan_5.FifthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".pertemuan_3.LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
@@ -42,5 +45,7 @@
             android:name=".MainActivity"
             android:exported="false" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
