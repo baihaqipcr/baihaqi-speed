@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bd_splash_bg"
+        android:src="@drawable/bd_bg_splash"
+        android:contentDescription="Auth Header Background"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
