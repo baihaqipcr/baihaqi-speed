@@ -67,4 +67,40 @@
     <color name="colorPrimaryDark">@color/primary_900</color>
     <color name="colorAccent">@color/cyan_400</color>
 
+
+    <color name="bd_primary">#1A6BD6</color>
+    <color name="bd_primary_dark">#1355B0</color>
+    <color name="bd_primary_light">#4D8FE0</color>
+    <color name="bd_primary_50">#E8F1FC</color>
+
+    <!-- Green — pertanian & sembako -->
+    <color name="bd_green">#27AE60</color>
+    <color name="bd_green_dark">#1E8449</color>
+    <color name="bd_green_light">#52C87D</color>
+    <color name="bd_green_50">#E8F8EF</color>
+
+    <!-- Orange — kehangatan & komunitas -->
+    <color name="bd_orange">#F39C12</color>
+    <color name="bd_orange_light">#F7BC50</color>
+    <color name="bd_orange_50">#FEF5E4</color>
+
+    <!-- Red accent -->
+    <color name="bd_red">#E74C3C</color>
+    <color name="bd_red_50">#FDEDEC</color>
+
+    <!-- Neutral -->
+    <color name="bd_bg">#F4F6FB</color>
+    <color name="bd_surface">#FFFFFF</color>
+    <color name="bd_text_primary">#1A2340</color>
+    <color name="bd_text_secondary">#6B7A99</color>
+    <color name="bd_text_hint">#B0BAD0</color>
+    <color name="bd_border">#E8ECF5</color>
+    <color name="bd_divider">#F0F2F8</color>
+    <color name="bd_chip_active_bg">#1A6BD6</color>
+    <color name="bd_chip_inactive_bg">#FFFFFF</color>
+    <color name="bd_star">#F4C542</color>
+
+    <!-- Splash overlay -->
+    <color name="bd_splash_overlay">#99000000</color>
+
 </resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background foto desa/alam -->
+    <ImageView
+        android:id="@+id/imgSplashBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bd_bg_splash"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Overlay gradient gelap di bawah -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bd_bg_splash"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Label kecil di atas judul -->
+    <TextView
+        android:id="@+id/tvSplashSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Program"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="16sp"
+        android:textColor="#CCFFFFFF"
+        android:alpha="0"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/tvSplashTitle"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Judul besar bergaya brush font -->
+    <TextView
+        android:id="@+id/tvSplashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bina\nDesa"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="56sp"
+        android:textColor="#FFFFFF"
+        android:lineSpacingMultiplier="0.9"
+        android:letterSpacing="-0.02"
+        android:alpha="0"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/tvSplashDesc"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Deskripsi -->
+    <TextView
+        android:id="@+id/tvSplashDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Distribusi sembako dan bantuan sosial\nuntuk masyarakat desa"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="14sp"
+        android:textColor="#BBFFFFFF"
+        android:lineSpacingExtra="4dp"
+        android:alpha="0"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@id/btnSplashExplore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Tombol Jelajahi -->
+    <Button
+        android:id="@+id/btnSplashExplore"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:text="Jelajahi Program"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="15sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bd_bg_primary_btn"
+        android:stateListAnimator="@null"
+        android:alpha="0"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bd_bg">
+
+    <!-- AppBar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        android:background="@color/bd_bg"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/bd_bg"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jelajahi"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="12sp"
+                            android:textColor="@color/bd_text_secondary"/>
+
+                        <TextView
+                            android:id="@+id/tvToolbarTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bina Desa"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/bd_text_primary"/>
+                    </LinearLayout>
+
+                    <!-- Lokasi chip -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/bd_bg_chip_inactive"
+                        android:paddingHorizontal="12dp"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📍"
+                            android:textSize="11sp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="  Indonesia"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="11sp"
+                            android:textColor="@color/bd_primary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="  ▾"
+                            android:textSize="10sp"
+                            android:textColor="@color/bd_primary"/>
+                    </LinearLayout>
+
+                    <!-- WebView button -->
+                    <ImageButton
+                        android:id="@+id/btnWebView"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bd_bg_chip_inactive"
+                        android:padding="7dp"
+                        android:src="@android:drawable/ic_menu_view"
+                        app:tint="@color/bd_primary"
+                        android:contentDescription="Web View"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Konten utama -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Search bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:background="@drawable/bd_bg_search"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔍"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="  Cari program bantuan..."
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="13sp"
+                    android:textColor="@color/bd_text_hint"/>
+            </LinearLayout>
+
+            <!-- Category chips -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:paddingStart="20dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="20dp">
+
+                    <TextView android:id="@+id/chipSemua"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Semua" android:gravity="center"
+                        android:fontFamily="@font/poppins_bold" android:textSize="12sp"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/bd_bg_chip_active"
+                        android:paddingHorizontal="18dp" android:layout_marginEnd="8dp"/>
+
+                    <TextView android:id="@+id/chipSembako"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Sembako" android:gravity="center"
+                        android:fontFamily="@font/poppins_regular" android:textSize="12sp"
+                        android:textColor="@color/bd_text_secondary"
+                        android:background="@drawable/bd_bg_chip_inactive"
+                        android:paddingHorizontal="18dp" android:layout_marginEnd="8dp"/>
+
+                    <TextView android:id="@+id/chipKesehatan"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Kesehatan" android:gravity="center"
+                        android:fontFamily="@font/poppins_regular" android:textSize="12sp"
+                        android:textColor="@color/bd_text_secondary"
+                        android:background="@drawable/bd_bg_chip_inactive"
+                        android:paddingHorizontal="18dp" android:layout_marginEnd="8dp"/>
+
+                    <TextView android:id="@+id/chipPendidikan"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Pendidikan" android:gravity="center"
+                        android:fontFamily="@font/poppins_regular" android:textSize="12sp"
+                        android:textColor="@color/bd_text_secondary"
+                        android:background="@drawable/bd_bg_chip_inactive"
+                        android:paddingHorizontal="18dp" android:layout_marginEnd="8dp"/>
+
+                    <TextView android:id="@+id/chipInfra"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Infrastruktur" android:gravity="center"
+                        android:fontFamily="@font/poppins_regular" android:textSize="12sp"
+                        android:textColor="@color/bd_text_secondary"
+                        android:background="@drawable/bd_bg_chip_inactive"
+                        android:paddingHorizontal="18dp"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Section: Populer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="14dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Populer"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/bd_text_primary"/>
+
+                <TextView
+                    android:id="@+id/tvSeeAllPopular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat semua"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="13sp"
+                    android:textColor="@color/bd_primary"/>
+            </LinearLayout>
+
+            <!-- Popular cards horizontal scroll -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:paddingStart="20dp"
+                android:layout_marginBottom="28dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingEnd="20dp">
+
+                    <!-- Card Populer 1 -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardPopular1"
+                        android:layout_width="175dp"
+                        android:layout_height="230dp"
+                        android:layout_marginEnd="14dp"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="4dp"
+                        app:cardBackgroundColor="@color/bd_surface">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/img_hero_custom1"
+                                android:id="@+id/imgCard1"
+                                android:contentDescription="Bansos Sembako"/>
+
+                            <!-- Badge nama -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bd_bg_badge"
+                                android:paddingHorizontal="10dp"
+                                android:paddingVertical="5dp"
+                                android:layout_alignBottom="@id/imgCard1"
+                                android:layout_margin="10dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bansos Sembako"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:textSize="10sp"
+                                    android:textColor="#FFFFFF"/>
+                            </LinearLayout>
+
+                            <!-- Heart icon -->
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@android:drawable/btn_star_big_on"
+                                android:padding="6dp"
+                                android:background="@drawable/bd_bg_heart"
+                                app:tint="@color/bd_red"
+                                android:layout_alignTop="@id/imgCard1"
+                                android:layout_alignEnd="@+id/imgCard1"
+                                android:layout_margin="10dp"
+                                android:contentDescription="Favorit"/>
+
+                            <!-- Rating & info -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:layout_below="@id/imgCard1">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="★"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/bd_star"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=" 4.8"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/bd_text_primary"/>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1.200 Penerima"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:textSize="10sp"
+                                    android:textColor="@color/bd_text_secondary"/>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Card Populer 2 (lebih tinggi sesuai desain Aspen) -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardPopular2"
+                        android:layout_width="175dp"
+                        android:layout_height="250dp"
+                        android:layout_marginTop="-20dp"
+                        android:layout_marginEnd="14dp"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="6dp"
+                        app:cardBackgroundColor="@color/bd_surface">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="185dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/img_hero_custom2"
+                                android:id="@+id/imgCard2"
+                                android:contentDescription="Bedah Rumah"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bd_bg_badge"
+                                android:paddingHorizontal="10dp"
+                                android:paddingVertical="5dp"
+                                android:layout_alignBottom="@id/imgCard2"
+                                android:layout_margin="10dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bedah Rumah"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:textSize="10sp"
+                                    android:textColor="#FFFFFF"/>
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@android:drawable/btn_star_big_on"
+                                android:padding="6dp"
+                                android:background="@drawable/bd_bg_heart"
+                                app:tint="@color/bd_text_hint"
+                                android:layout_alignTop="@id/imgCard2"
+                                android:layout_alignEnd="@+id/imgCard2"
+                                android:layout_margin="10dp"
+                                android:contentDescription="Favorit"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:layout_below="@id/imgCard2">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="★"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/bd_star"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=" 4.5"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/bd_text_primary"/>
+                                </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="856 Unit"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:textSize="10sp"
+                                    android:textColor="@color/bd_text_secondary"/>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Section: Direkomendasikan -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="14dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Direkomendasikan"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/bd_text_primary"/>
+
+                <TextView
+                    android:id="@+id/tvSeeAllRec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat semua"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="13sp"
+                    android:textColor="@color/bd_primary"/>
+            </LinearLayout>
+
+            <!-- Recommended grid 2 kolom -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="12dp">
+
+                <!-- Rec Card 1 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardRec1"
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/bd_surface">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRec1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_hero_custom1"
+                            android:contentDescription="Sembako Gratis"/>
+
+                        <!-- Dark overlay bawah -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="#AA000000"/>
+
+                        <!-- Badge kuota -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bd_bg_badge"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="3dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="8dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="200 KK"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textSize="9sp"
+                                android:textColor="#FFFFFF"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sembako Gratis"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="11sp"
+                            android:textColor="#FFFFFF"
+                            android:paddingHorizontal="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Rec Card 2 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardRec2"
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/bd_surface">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRec2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_hero_custom2"
+                            android:contentDescription="Bangun Desa"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="#AA000000"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bd_bg_badge"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="3dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="8dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="150 KK"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textSize="9sp"
+                                android:textColor="#FFFFFF"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Bangun Desa"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="11sp"
+                            android:textColor="#FFFFFF"
+                            android:paddingHorizontal="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/bd_bg_bottom_nav"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_anchor="@id/appBarLayout"
+        app:layout_anchorGravity="bottom"
+        android:layout_gravity="bottom">
+
+        <ImageButton android:id="@+id/navHome"
+            android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1" android:background="@null"
+            android:padding="16dp" android:src="@android:drawable/ic_menu_gallery"
+            android:backgroundTint="@color/bd_primary"
+            android:contentDescription="Home"/>
+
+        <ImageButton android:id="@+id/navBookmark"
+            android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1" android:background="@null"
+            android:padding="16dp" android:src="@android:drawable/ic_menu_agenda"
+            android:backgroundTint="@color/bd_text_hint"
+            android:contentDescription="Bookmark"/>
+
+        <ImageButton android:id="@+id/navMap"
+            android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1" android:background="@null"
+            android:padding="16dp" android:src="@android:drawable/ic_menu_mapmode"
+            android:backgroundTint="@color/bd_text_hint"
+            android:contentDescription="Map"/>
+
+        <ImageButton android:id="@+id/navProfile"
+            android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1" android:background="@null"
+            android:padding="16dp" android:src="@android:drawable/ic_menu_myplaces"
+            android:backgroundTint="@color/bd_text_hint"
+            android:contentDescription="Profile"/>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
