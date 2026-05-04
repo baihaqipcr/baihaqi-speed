@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- ===== PRIMARY BLUE ===== -->
+    <!-- ===== PRIMARY PALETTES ===== -->
     <color name="primary_50">#E3F2FD</color>
     <color name="primary_100">#BBDEFB</color>
     <color name="primary_200">#90CAF9</color>
@@ -12,83 +12,38 @@
     <color name="primary_700">#1976D2</color>
     <color name="primary_800">#1565C0</color>
     <color name="primary_900">#0D47A1</color>
-    <color name="text_dark">#212121</color>
-    <color name="white_70">#B3FFFFFF</color>
-    <color name="gradientStart">#2196F3</color>
 
-
-    <!-- ===== CYAN / TEAL ===== -->
     <color name="cyan_100">#B2EBF2</color>
     <color name="cyan_200">#80DEEA</color>
     <color name="cyan_400">#26C6DA</color>
     <color name="cyan_600">#00ACC1</color>
     <color name="cyan_800">#00838F</color>
 
-    <!-- ===== GREEN ===== -->
     <color name="green_100">#C8E6C9</color>
     <color name="green_200">#A5D6A7</color>
     <color name="green_400">#66BB6A</color>
     <color name="green_600">#43A047</color>
     <color name="green_800">#2E7D32</color>
 
-    <!-- ===== RED (Logout) ===== -->
     <color name="red_100">#FFCDD2</color>
     <color name="red_400">#EF5350</color>
     <color name="red_600">#E53935</color>
     <color name="red_800">#C62828</color>
 
-    <!-- ===== BACKGROUND & SURFACE ===== -->
-    <color name="bg_page">#EFF8FF</color>
-    <color name="bg_card">#F0FAFF</color>
-    <color name="bg_surface">#FFFFFF</color>
-
-    <!-- ===== TEXT ===== -->
-    <color name="text_primary">#0D47A1</color>
-    <color name="text_secondary">#1976D2</color>
-    <color name="text_hint">#90CAF9</color>
-    <color name="text_white">#FFFFFF</color>
-    <color name="text_white_70">#B3FFFFFF</color>
-
-
-    <!-- ===== BORDER ===== -->
-    <color name="border_light">#B3E5FC</color>
-    <color name="border_medium">#90CAF9</color>
-
-    <!-- ===== SEMANTIC ===== -->
-    <color name="color_error">#E53935</color>
-    <color name="color_success">#43A047</color>
-    <color name="color_warning">#FB8C00</color>
-    <color name="color_info">#0288D1</color>
-
-    <!-- ===== MISC ===== -->
-    <color name="white">#FFFFFF</color>
-    <color name="black">#212121</color>
-    <color name="colorPrimary">@color/primary_800</color>
-    <color name="colorPrimaryDark">@color/primary_900</color>
-    <color name="colorAccent">@color/cyan_400</color>
-
-
+    <!-- ===== BINA DESA COLORS ===== -->
     <color name="bd_primary">#1A6BD6</color>
     <color name="bd_primary_dark">#1355B0</color>
     <color name="bd_primary_light">#4D8FE0</color>
     <color name="bd_primary_50">#E8F1FC</color>
-
-    <!-- Green — pertanian & sembako -->
     <color name="bd_green">#27AE60</color>
     <color name="bd_green_dark">#1E8449</color>
     <color name="bd_green_light">#52C87D</color>
     <color name="bd_green_50">#E8F8EF</color>
-
-    <!-- Orange — kehangatan & komunitas -->
     <color name="bd_orange">#F39C12</color>
     <color name="bd_orange_light">#F7BC50</color>
     <color name="bd_orange_50">#FEF5E4</color>
-
-    <!-- Red accent -->
     <color name="bd_red">#E74C3C</color>
     <color name="bd_red_50">#FDEDEC</color>
-
-    <!-- Neutral -->
     <color name="bd_bg">#F4F6FB</color>
     <color name="bd_surface">#FFFFFF</color>
     <color name="bd_text_primary">#1A2340</color>
@@ -99,8 +54,48 @@
     <color name="bd_chip_active_bg">#1A6BD6</color>
     <color name="bd_chip_inactive_bg">#FFFFFF</color>
     <color name="bd_star">#F4C542</color>
-
-    <!-- Splash overlay -->
     <color name="bd_splash_overlay">#99000000</color>
+
+    <!-- ===== THEME & GRADIENTS ===== -->
+    <color name="teal_start">#00B4DB</color>
+    <color name="teal_end">#0083B0</color>
+    <color name="teal_mid">#0099C6</color>
+    <color name="gradientStart">#2196F3</color>
+    <color name="accent_yellow">#FFC107</color>
+    <color name="accent_yellow_dark">#F9A825</color>
+
+    <!-- ===== SEMANTIC COLORS (CONSOLIDATED) ===== -->
+    <color name="bg_page">#F0F4F8</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_surface">#FFFFFF</color>
+    <color name="bg_white">#FFFFFF</color>
+
+    <color name="text_primary">#1A2340</color>
+    <color name="text_secondary">#6B7A99</color>
+    <color name="text_hint">#90CAF9</color>
+    <color name="text_dark">#212121</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_white_70">#B3FFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+
+    <color name="border_light">#E8ECF5</color>
+    <color name="border_medium">#90CAF9</color>
+
+    <color name="color_error">#E53935</color>
+    <color name="color_success">#27AE60</color>
+    <color name="color_warning">#F39C12</color>
+    <color name="color_info">#1A6BD6</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#212121</color>
+
+    <!-- System / Theme Colors -->
+    <color name="colorPrimary">#00B4DB</color>
+    <color name="colorPrimaryDark">#0083B0</color>
+    <color name="colorAccent">#FFC107</color>
+
+    <!-- Navigation -->
+    <color name="nav_active">#00B4DB</color>
+    <color name="nav_inactive">#9E9E9E</color>
 
 </resources>

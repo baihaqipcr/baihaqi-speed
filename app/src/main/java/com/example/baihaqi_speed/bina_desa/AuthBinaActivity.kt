@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.baihaqi_speed.MainActivity
 import com.example.baihaqi_speed.databinding.ActivityAuthBinaBinding
 
 class AuthBinaActivity : AppCompatActivity() {
@@ -52,7 +53,7 @@ class AuthBinaActivity : AppCompatActivity() {
         Toast.makeText(this, "Selamat datang, $username!", Toast.LENGTH_SHORT).show()
 
         // Pindah ke Main
-        startActivity(Intent(this, MainBinaActivity::class.java).apply {
+        startActivity(Intent(this, MainActivity::class.java).apply {
             putExtra(SplashBinaActivity.KEY_USER, username)
         })
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)

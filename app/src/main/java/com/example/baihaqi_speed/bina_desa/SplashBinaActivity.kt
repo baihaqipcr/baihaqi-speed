@@ -9,6 +9,7 @@ import android.os.Looper
 import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
+import com.example.baihaqi_speed.MainActivity
 import com.example.baihaqi_speed.R
 import com.example.baihaqi_speed.databinding.ActivitySplashBinaBinding
 
@@ -87,7 +88,7 @@ class SplashBinaActivity : AppCompatActivity() {
     }
 
     private fun goToMain() {
-        startActivity(Intent(this, MainBinaActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         finish()
     }
