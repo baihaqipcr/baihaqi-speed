@@ -164,7 +164,21 @@
                 android:textSize="15sp"
                 android:textColor="#FFFFFF"
                 android:background="@drawable/bd_bg_primary_btn"
-                android:stateListAnimator="@null"/>
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Tombol Register -->
+            <TextView
+                android:id="@+id/tvToRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Belum punya akun? Daftar Sekarang"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="13sp"
+                android:textColor="@color/bd_primary"
+                android:gravity="center"
+                android:padding="8dp"/>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -172,7 +186,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Demo: gunakan username dan password apapun"
+        android:text="Demo: login dengan akun yang sudah didaftarkan"
         android:fontFamily="@font/poppins_regular"
         android:textSize="11sp"
         android:textColor="@color/bd_text_hint"

@@ -19,7 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Logo -->
         <ImageView
             android:id="@+id/imgLogo"
             android:layout_width="90dp"
@@ -27,7 +26,6 @@
             android:src="@drawable/ic_logo"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Nama Aplikasi -->
         <TextView
             android:id="@+id/tvAppName"
             android:layout_width="wrap_content"
@@ -36,7 +34,6 @@
             android:textAppearance="@style/TextAppearance.AquaFlow.Title"
             android:textSize="32sp"/>
 
-        <!-- Tagline/Deskripsi -->
         <TextView
             android:id="@+id/tvTagline"
             android:layout_width="wrap_content"
@@ -67,7 +64,6 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <!-- Sign In Title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -77,7 +73,6 @@
                 android:textColor="@color/text_dark"
                 android:layout_marginBottom="4dp"/>
 
-            <!-- New User -->
             <TextView
                 android:id="@+id/tvNewUser"
                 android:layout_width="wrap_content"
@@ -89,70 +84,74 @@
                 android:layout_marginBottom="20dp"/>
 
             <!-- Input Username -->
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/bg_edittext_glass"
-                android:padding="4dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_user"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="8dp"/>
-
-                <EditText
-                    android:id="@+id/etUsername"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:hint="Username"
-                    android:fontFamily="@font/poppins_regular"
-                    android:textSize="13sp"
-                    android:textColor="@color/text_dark"
-                    android:background="@null"
-                    android:paddingEnd="12dp"
-                    android:inputType="text"
-                    android:singleLine="true"/>
-            </LinearLayout>
+                app:errorEnabled="true"
+                android:layout_marginBottom="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_edittext_glass"
+                    android:padding="4dp"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_user"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="8dp"/>
+                    <EditText
+                        android:id="@+id/etUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Username"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_dark"
+                        android:background="@null"
+                        android:inputType="text"
+                        android:singleLine="true"/>
+                </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Input Password -->
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/bg_edittext_glass"
-                android:padding="4dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="24dp">
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_edittext_glass"
+                    android:padding="4dp"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_lock"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="8dp"/>
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Password"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_dark"
+                        android:background="@null"
+                        android:inputType="textPassword"
+                        android:singleLine="true"/>
+                </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_lock"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="8dp"/>
-
-                <EditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:hint="Password"
-                    android:fontFamily="@font/poppins_regular"
-                    android:textSize="13sp"
-                    android:textColor="@color/text_dark"
-                    android:background="@null"
-                    android:paddingEnd="12dp"
-                    android:inputType="textPassword"
-                    android:singleLine="true"/>
-            </LinearLayout>
-
-            <!-- Tombol Login -->
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
@@ -165,7 +164,6 @@
                 android:stateListAnimator="@null"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- OR separator -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -176,7 +174,6 @@
                 android:gravity="center"
                 android:layout_marginBottom="12dp"/>
 
-            <!-- Google Button -->
             <Button
                 android:id="@+id/btnGoogle"
                 android:layout_width="match_parent"
@@ -193,7 +190,6 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Constraint bawah agar card tidak terpotong -->
     <View
         android:id="@+id/bottomSpacer"
         android:layout_width="match_parent"

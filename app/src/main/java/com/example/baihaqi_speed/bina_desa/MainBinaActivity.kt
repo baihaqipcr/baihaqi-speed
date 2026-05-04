@@ -14,7 +14,7 @@ class MainBinaActivity : AppCompatActivity() {
         private const val TAG = "MainBinaActivity"
         const val EXTRA_PROGRAM_ID    = "extra_program_id"
         const val EXTRA_PROGRAM_TITLE = "extra_program_title"
-        const val BINA_DESA_URL       = "https://binades.id"
+        const val BINA_DESA_URL       = "https://bantuansosial-admin.alwaysdata.net/login"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

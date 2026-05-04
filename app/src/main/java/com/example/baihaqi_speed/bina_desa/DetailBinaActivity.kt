@@ -40,7 +40,7 @@ class DetailBinaActivity : AppCompatActivity() {
         // Tombol WebView di detail
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(this, WebBinaActivity::class.java).apply {
-                putExtra(WebBinaActivity.EXTRA_URL, "https://binades.id/program/$programId")
+                putExtra(WebBinaActivity.EXTRA_URL, "https://bantuansosial-admin.alwaysdata.net/login")
                 putExtra(WebBinaActivity.EXTRA_TITLE, programTitle)
             })
         }
