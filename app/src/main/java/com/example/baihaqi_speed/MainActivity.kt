@@ -8,6 +8,7 @@ import com.example.baihaqi_speed.R
 import com.example.baihaqi_speed.bantuan_sosial.AboutFragment
 import com.example.baihaqi_speed.bantuan_sosial.HomeFragment
 import com.example.baihaqi_speed.bantuan_sosial.ProfileFragment
+import com.example.baihaqi_speed.bantuan_sosial.SettingsFragment
 import com.example.baihaqi_speed.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,32 +22,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inisialisasi ViewBinding sesuai dengan activity_main.xml
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         Log.d(TAG, "onCreate: MainActivity started")
 
-        // Tampilkan fragment awal (Home) jika pertama kali dibuka
         if (savedInstanceState == null) {
             loadFragment(HomeFragment(), "HomeFragment")
         }
 
-        // Setup BottomNavigation listener
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    Log.d(TAG, "Navigasi ke: Home")
                     loadFragment(HomeFragment(), "HomeFragment")
                     true
                 }
                 R.id.nav_about -> {
-                    Log.d(TAG, "Navigasi ke: About")
                     loadFragment(AboutFragment(), "AboutFragment")
                     true
                 }
                 R.id.nav_profile -> {
-                    Log.d(TAG, "Navigasi ke: Profile")
                     loadFragment(ProfileFragment(), "ProfileFragment")
                     true
                 }
@@ -55,13 +50,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadFragment(fragment: Fragment, tag: String) {
+    fun loadFragment(fragment: Fragment, tag: String) {
         supportFragmentManager.beginTransaction()
             .setCustomAnimations(
                 android.R.anim.fade_in,
                 android.R.anim.fade_out
             )
             .replace(R.id.fragmentContainer, fragment, tag)
+            .addToBackStack(tag)
             .commit()
     }
 }

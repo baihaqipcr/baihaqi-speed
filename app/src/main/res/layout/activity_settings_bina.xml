@@ -8,39 +8,23 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bd_bg"
         app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarAbout"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/bd_bg">
+            android:background="@color/bd_bg"
+            app:navigationIcon="@drawable/ic_back_white"
+            app:navigationIconTint="@color/bd_primary">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingEnd="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Tentang &amp; Pengaturan"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="18sp"
-                    android:textColor="@color/bd_text_primary" />
-
-                <ImageView
-                    android:id="@+id/ivAboutSettings"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:src="@android:drawable/ic_menu_manage"
-                    app:tint="@color/bd_primary"
-                    android:contentDescription="Settings" />
-            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan &amp; Info"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:textColor="@color/bd_text_primary" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -55,7 +39,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Card for ListView (Simple ListView Requirement) -->
+            <!-- Card for ListView -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,19 +48,19 @@
                 android:layout_marginBottom="24dp">
 
                 <ListView
-                    android:id="@+id/lvAboutMenu"
+                    android:id="@+id/lvSettings"
                     android:layout_width="match_parent"
-                    android:layout_height="320dp"
+                    android:layout_height="280dp"
                     android:divider="@color/bd_divider"
                     android:dividerHeight="1dp"
                     android:padding="8dp" />
             </androidx.cardview.widget.CardView>
 
-            <!-- Feedback Section (TextInputLayout & MaterialButton Requirement) -->
+            <!-- Feedback Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hubungi Kami"
+                android:text="Beri Masukan"
                 android:fontFamily="@font/poppins_bold"
                 android:textSize="16sp"
                 android:textColor="@color/bd_text_primary"
@@ -99,7 +83,7 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Saran untuk desa"
+                        android:hint="Pesan Anda"
                         app:boxCornerRadiusTopStart="12dp"
                         app:boxCornerRadiusTopEnd="12dp"
                         app:boxCornerRadiusBottomStart="12dp"
@@ -107,7 +91,7 @@
                         android:layout_marginBottom="16dp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etAboutFeedback"
+                            android:id="@+id/etFeedback"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
                             android:gravity="top"
@@ -117,10 +101,10 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnAboutSubmit"
+                        android:id="@+id/btnSendFeedback"
                         android:layout_width="match_parent"
                         android:layout_height="54dp"
-                        android:text="Kirim Aspirasi"
+                        android:text="Kirim Masukan"
                         android:fontFamily="@font/poppins_bold"
                         android:textAllCaps="false"
                         app:cornerRadius="12dp"
@@ -131,7 +115,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bina Desa v1.0.0"
+                android:text="Versi 1.0.0 (Bina Desa)"
                 android:gravity="center"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/poppins_regular"

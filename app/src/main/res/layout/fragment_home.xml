@@ -1,430 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_page"
-    android:fillViewport="true">
+    android:background="@color/bd_bg">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp">
 
-        <!-- ===== HEADER TEAL ===== -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_teal_gradient"
-            android:orientation="vertical"
-            android:paddingTop="48dp"
-            android:paddingBottom="32dp"
-            android:paddingHorizontal="20dp">
+            android:orientation="vertical">
 
-            <!-- Baris atas: greeting + ikon settings -->
+            <!-- Custom Header Background Drawable -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="20dp">
+                android:background="@drawable/bg_teal_gradient"
+                android:orientation="vertical"
+                android:paddingTop="32dp"
+                android:paddingBottom="24dp"
+                android:paddingHorizontal="20dp">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Selamat Datang,"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textSize="13sp"
-                        android:textColor="@color/text_white_70"/>
+                        android:orientation="vertical"
+                        android:layout_alignParentStart="true">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selamat Datang,"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_white_70"/>
 
-                    <TextView
-                        android:id="@+id/tvWelcomeName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Relawan Bina Desa"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textSize="20sp"
-                        android:textColor="@color/text_white"/>
-                </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvWelcomeName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Relawan Bina Desa"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="22sp"
+                            android:textColor="@color/text_white"/>
+                    </LinearLayout>
 
-                <!-- Ikon setting -->
-                <ImageView
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:src="@android:drawable/ic_menu_manage"
-                    android:backgroundTint="#FFFFFF"
-                    android:background="@drawable/bg_avatar_circle"
-                    android:padding="8dp"
-                    android:contentDescription="Settings"/>
+                    <!-- Settings Icon -->
+                    <ImageView
+                        android:id="@+id/ivHomeSettings"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_menu_manage"
+                        app:tint="#FFFFFF"
+                        android:background="@drawable/bg_avatar_circle"
+                        android:padding="8dp"
+                        android:contentDescription="Settings"/>
+                </RelativeLayout>
             </LinearLayout>
 
-            <!-- Statistik utama -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TOTAL PAKET TERSALURKAN"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="11sp"
-                android:textColor="@color/text_white_70"
-                android:letterSpacing="0.1"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:id="@+id/tvTotalPaket"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1.250 Paket"
-                android:fontFamily="@font/poppins_bold"
-                android:textSize="36sp"
-                android:textColor="@color/text_white"
-                android:layout_marginBottom="8dp"/>
-
-            <!-- Badge naik -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:background="@drawable/bg_tag_green"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="4dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="▲ 8.5% bulan ini"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="11sp"
-                    android:textColor="#27AE60"/>
-            </LinearLayout>
-
-            <!-- 3 statistik kecil di bawah -->
-            <LinearLayout
+            <!-- TextInputLayout Search (Material) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilSearch"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="-24dp"
+                android:hint="Cari bantuan..."
+                app:startIconDrawable="@android:drawable/ic_menu_search"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxBackgroundColor="@color/bd_surface"
+                app:boxStrokeColor="@color/bd_primary"
+                app:hintTextColor="@color/bd_text_hint">
 
-                <!-- Stat 1 -->
-                <LinearLayout
-                    android:layout_width="0dp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="986"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textSize="18sp"
-                        android:textColor="@color/text_white"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="KK Penerima"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textSize="10sp"
-                        android:textColor="@color/text_white_70"/>
-                </LinearLayout>
-
-                <!-- Divider -->
-                <View android:layout_width="1dp" android:layout_height="40dp"
-                    android:background="#33FFFFFF"/>
-
-                <!-- Stat 2 -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="12"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textSize="18sp"
-                        android:textColor="@color/text_white"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Desa Aktif"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textSize="10sp"
-                        android:textColor="@color/text_white_70"/>
-                </LinearLayout>
-
-                <!-- Divider -->
-                <View android:layout_width="1dp" android:layout_height="40dp"
-                    android:background="#33FFFFFF"/>
-
-                <!-- Stat 3 -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="48"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textSize="18sp"
-                        android:textColor="@color/text_white"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Relawan"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textSize="10sp"
-                        android:textColor="@color/text_white_70"/>
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- ===== BODY PUTIH ===== -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <!-- Button Baru untuk ke DetailBinaActivity -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnDetailBina"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="Detail Bina Desa"
-                android:textAllCaps="false"
-                android:fontFamily="@font/poppins_bold"
-                android:textSize="14sp"
-                app:cornerRadius="12dp"
-                android:layout_marginBottom="20dp"
-                app:icon="@android:drawable/ic_menu_info_details"
-                android:backgroundTint="@color/teal_start"/>
-
-            <!-- Label Kegiatan -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="14dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Kegiatan Terbaru"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/text_primary"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Lihat Semua"
                     android:fontFamily="@font/poppins_regular"
-                    android:textSize="12sp"
-                    android:textColor="@color/teal_start"/>
-            </LinearLayout>
+                    android:textSize="14sp"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Card Kegiatan 1 -->
-            <androidx.cardview.widget.CardView
+            <!-- Chip & ChipGroup -->
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="3dp"
-                app:cardBackgroundColor="@color/bg_card">
+                android:scrollbars="none"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupCategories"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="14dp"
-                    android:gravity="center_vertical">
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                    <!-- Ikon -->
-                    <LinearLayout
-                        android:layout_width="44dp"
-                        android:layout_height="44dp"
-                        android:background="@drawable/bg_tag_green"
-                        android:gravity="center"
-                        android:layout_marginEnd="12dp">
-                        <TextView android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="🌾" android:textSize="20sp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Distribusi Beras Desa Sukamakmur"
-                            android:fontFamily="@font/poppins_bold"
-                            android:textSize="13sp"
-                            android:textColor="@color/text_primary"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="120 KK • 17 November 2024"
-                            android:fontFamily="@font/poppins_regular"
-                            android:textSize="11sp"
-                            android:textColor="@color/text_secondary"
-                            android:paddingTop="2dp"/>
-                    </LinearLayout>
-
-                    <TextView
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSemua"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Selesai"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textSize="10sp"
-                        android:textColor="#27AE60"
-                        android:background="@drawable/bg_tag_green"
-                        android:paddingHorizontal="10dp"
-                        android:paddingVertical="4dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        android:text="Semua"
+                        android:checked="true"
+                        app:chipBackgroundColor="@color/bd_bg_chip_state_list"
+                        android:textColor="@color/bd_chip_text_state_list"/>
 
-            <!-- Card Kegiatan 2 -->
-            <androidx.cardview.widget.CardView
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSembako"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sembako"
+                        app:chipBackgroundColor="@color/bd_bg_chip_state_list"
+                        android:textColor="@color/bd_chip_text_state_list"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipKesehatan"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kesehatan"
+                        app:chipBackgroundColor="@color/bd_bg_chip_state_list"
+                        android:textColor="@color/bd_chip_text_state_list"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipPendidikan"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pendidikan"
+                        app:chipBackgroundColor="@color/bd_bg_chip_state_list"
+                        android:textColor="@color/bd_chip_text_state_list"/>
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <!-- GridLayout for Services -->
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="3dp"
-                app:cardBackgroundColor="@color/bg_card">
+                android:text="Layanan Desa"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="17sp"
+                android:textColor="@color/bd_text_primary"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="12dp"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="14dp"
-                    android:gravity="center_vertical">
-
-                    <LinearLayout
-                        android:layout_width="44dp"
-                        android:layout_height="44dp"
-                        android:background="@drawable/bg_tag_blue"
-                        android:gravity="center"
-                        android:layout_marginEnd="12dp">
-                        <TextView android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="📋" android:textSize="20sp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pengecekan Data Warga RT 03"
-                            android:fontFamily="@font/poppins_bold"
-                            android:textSize="13sp"
-                            android:textColor="@color/text_primary"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="85 Warga • 18 November 2024"
-                            android:fontFamily="@font/poppins_regular"
-                            android:textSize="11sp"
-                            android:textColor="@color/text_secondary"
-                            android:paddingTop="2dp"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Proses"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textSize="10sp"
-                        android:textColor="@color/color_info"
-                        android:background="@drawable/bg_tag_blue"
-                        android:paddingHorizontal="10dp"
-                        android:paddingVertical="4dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Card Kegiatan 3 -->
-            <androidx.cardview.widget.CardView
+            <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="3dp"
-                app:cardBackgroundColor="@color/bg_card">
+                android:columnCount="2"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="24dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="14dp"
-                    android:gravity="center_vertical">
-
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="2dp">
                     <LinearLayout
-                        android:layout_width="44dp"
-                        android:layout_height="44dp"
-                        android:background="@drawable/bg_tag_orange"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
                         android:gravity="center"
-                        android:layout_marginEnd="12dp">
-                        <TextView android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="🛢️" android:textSize="20sp"/>
+                        android:padding="16dp"
+                        android:background="@drawable/bd_bg_card_gradient">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="📋" android:textSize="24sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Administrasi" android:fontFamily="@font/poppins_bold"
+                            android:textSize="12sp" android:layout_marginTop="8dp"/>
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="2dp">
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Distribusi Minyak Goreng Desa B"
-                            android:fontFamily="@font/poppins_bold"
-                            android:textSize="13sp"
-                            android:textColor="@color/text_primary"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="200 KK • 19 November 2024"
-                            android:fontFamily="@font/poppins_regular"
-                            android:textSize="11sp"
-                            android:textColor="@color/text_secondary"
-                            android:paddingTop="2dp"/>
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:background="@drawable/bd_bg_card_gradient">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="🚑" android:textSize="24sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Ambulans" android:fontFamily="@font/poppins_bold"
+                            android:textSize="12sp" android:layout_marginTop="8dp"/>
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pending"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textSize="10sp"
-                        android:textColor="@color/color_warning"
-                        android:background="@drawable/bg_tag_orange"
-                        android:paddingHorizontal="10dp"
-                        android:paddingVertical="4dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            <!-- MaterialButton CTA -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExploreMore"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="Lihat Semua Program →"
+                android:fontFamily="@font/poppins_bold"
+                android:textAllCaps="false"
+                app:cornerRadius="14dp"
+                android:backgroundTint="@color/bd_primary"/>
 
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
