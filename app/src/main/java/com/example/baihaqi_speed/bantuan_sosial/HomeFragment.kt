@@ -1,7 +1,6 @@
 package com.example.baihaqi_speed.bantuan_sosial
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.baihaqi_speed.MainActivity
-import com.example.baihaqi_speed.bina_desa.DetailBinaActivity
 import com.example.baihaqi_speed.bina_desa.SplashBinaActivity
 import com.example.baihaqi_speed.databinding.FragmentHomeBinding
 
@@ -80,11 +78,9 @@ class HomeFragment : Fragment() {
             (activity as? MainActivity)?.loadFragment(SettingsFragment(), "SettingsFragment")
         }
 
+        // Navigasi ke ProgramsFragment (TabLayout + RecyclerView)
         binding.btnExploreMore.setOnClickListener {
-            Toast.makeText(context, "Menampilkan semua program...", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(requireContext(), DetailBinaActivity::class.java).apply {
-                putExtra("extra_program_title", "Bansos Sembako")
-            })
+            (activity as? MainActivity)?.loadFragment(ProgramsFragment(), "ProgramsFragment")
         }
     }
 
