@@ -88,6 +88,7 @@
 
     <color name="white">#FFFFFF</color>
     <color name="black">#212121</color>
+    <color name="abu_gelap">#F0F4F8</color>"
 
     <!-- System / Theme Colors -->
     <color name="colorPrimary">#00B4DB</color>

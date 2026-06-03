@@ -1,14 +1,21 @@
 package com.example.baihaqi_speed.bantuan_sosial
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.baihaqi_speed.MainActivity
+import com.example.baihaqi_speed.R
+import com.example.baihaqi_speed.bantuan_sosial.tutorial.TutorialMessageActivity
 import com.example.baihaqi_speed.databinding.FragmentAboutBinding
 
 class AboutFragment : Fragment() {
@@ -33,9 +40,20 @@ class AboutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG, "onViewCreated: AboutFragment")
 
+        // Memanggil fungsi inisialisasi komponen UI
         setupListView()
         setupFeedback()
         setupNavigation()
+
+        // Setup Toolbar sesuai ID di XML (toolbarAbout)
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbarAbout)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            // Mematikan title default Android agar tidak menabrak TextView kustom di XML kamu
+            setDisplayShowTitleEnabled(false)
+        }
+
+        @Suppress("DEPRECATION")
+        setHasOptionsMenu(true)
     }
 
     private fun setupListView() {
@@ -74,8 +92,23 @@ class AboutFragment : Fragment() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.message_toolbar_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_tutorial -> {
+                val intent = Intent(requireContext(), TutorialMessageActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     private fun setupNavigation() {
-        // Navigasi ke SettingsFragment
+        // Navigasi ke SettingsFragment lewat icon manage di toolbar
         binding.ivAboutSettings.setOnClickListener {
             (activity as? MainActivity)?.loadFragment(SettingsFragment(), "SettingsFragment")
         }

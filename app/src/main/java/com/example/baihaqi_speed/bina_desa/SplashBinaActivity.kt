@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baihaqi_speed.MainActivity
 import com.example.baihaqi_speed.R
+import com.example.baihaqi_speed.bantuan_sosial.tutorial.TutorialMessageActivity
 import com.example.baihaqi_speed.databinding.ActivitySplashBinaBinding
 
 @SuppressLint("CustomSplashScreen")
@@ -23,6 +24,7 @@ class SplashBinaActivity : AppCompatActivity() {
         const val PREF_NAME   = "bina_desa_pref"
         const val KEY_LOGIN   = "isLogin"
         const val KEY_USER    = "username"
+        const val KEY_FIRST_TIME = "isFirstTime"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +42,7 @@ class SplashBinaActivity : AppCompatActivity() {
         // Cek SharedPreferences — sudah login atau belum
         val pref     = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
         val isLogin  = pref.getBoolean(KEY_LOGIN, false)
+        val isFirstTime = pref.getBoolean(KEY_FIRST_TIME, true)
 
         playIntroAnimations()
 
@@ -48,7 +51,11 @@ class SplashBinaActivity : AppCompatActivity() {
             if (isLogin) {
                 goToMain()
             } else {
-                goToAuth()
+                if (isFirstTime) {
+                    goToTutorial()
+                } else {
+                    goToAuth()
+                }
             }
         }
 
@@ -79,6 +86,12 @@ class SplashBinaActivity : AppCompatActivity() {
         handler.postDelayed({
             binding.btnSplashExplore.animate().alpha(1f).setDuration(500).start()
         }, 1000)
+    }
+
+    private fun goToTutorial() {
+        startActivity(Intent(this, TutorialMessageActivity::class.java))
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        finish()
     }
 
     private fun goToAuth() {
